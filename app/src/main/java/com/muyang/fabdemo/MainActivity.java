@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView ;
     private FloatingActionButton fab;
     private CoordinatorLayout mCoor;
+    //判断是否打开
+    private boolean isOpen=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
