@@ -32,7 +32,7 @@ public class RotateBehavior extends CoordinatorLayout.Behavior<FloatingActionBut
     public boolean onDependentViewChanged(CoordinatorLayout parent, FloatingActionButton child, View dependency) {
         float translationY = getFabTranslationYForSnackbar(parent, child);
         float percentComplete = -translationY / dependency.getHeight();
-        child.setRotation(-135* percentComplete);
+        child.setRotation(-135 * percentComplete);
         child.setTranslationY(translationY);
         return false;
     }
