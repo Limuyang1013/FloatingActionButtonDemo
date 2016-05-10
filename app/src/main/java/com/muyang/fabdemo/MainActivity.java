@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!isOpen) {
                     turnLeft(v);
                 } else {
-                    trunRight(v);
+                    turnRight(v);
                 }
             }
         });
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //回到起始位置
-    public void trunRight(View v) {
+    public void turnRight(View v) {
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(v, "rotation", -135, 20, 0);
         objectAnimator.setDuration(300);
         objectAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
