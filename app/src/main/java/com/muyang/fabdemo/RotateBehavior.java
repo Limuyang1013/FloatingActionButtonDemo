@@ -12,11 +12,13 @@ import java.util.List;
 
 /**
  * Created by muyang on 2016/5/9.
+ *
  */
 public class RotateBehavior extends CoordinatorLayout.Behavior<FloatingActionButton> {
     private static final String TAG = RotateBehavior.class.getSimpleName();
 
     public RotateBehavior() {
+
     }
 
     public RotateBehavior(Context context, AttributeSet attrs) {
