@@ -4,13 +4,11 @@ import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.widget.TextView;
 
@@ -36,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /**
+                 * SnackBar结合RotateBehavior使用
+                 */
 //                Snackbar.make(mCoor,"FAB",Snackbar.LENGTH_SHORT)
 //                        .setAction("UNDO", new View.OnClickListener() {
 //                            @Override
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 //                        })
 //                        .show();
                 if (!isOpen) {
-                    trunLeft(v);
+                    turnLeft(v);
                 } else {
                     trunRight(v);
                 }
@@ -54,13 +55,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //开始旋转
-    public void trunLeft(View v) {
+    public void turnLeft(View v) {
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(v, "rotation", 0, -155, -135);
         objectAnimator.setDuration(300);
         objectAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
         objectAnimator.start();
         hide.setVisibility(View.VISIBLE);
-        AlphaAnimation alphaAnimation = new AlphaAnimation(0, 0.65f);
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0, 0.75f);
         alphaAnimation.setDuration(300);
         alphaAnimation.setFillAfter(true);
         hide.startAnimation(alphaAnimation);
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         objectAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
         objectAnimator.start();
         hide.setVisibility(View.GONE);
-        AlphaAnimation alphaAnimation = new AlphaAnimation(0.65f, 0);
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0.75f, 0);
         alphaAnimation.setDuration(300);
         alphaAnimation.setFillAfter(true);
         hide.startAnimation(alphaAnimation);
