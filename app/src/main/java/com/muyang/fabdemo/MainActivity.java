@@ -53,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        hide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    turnRight(fab);
+            }
+        });
+
     }
 
     //开始旋转
@@ -66,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         alphaAnimation.setDuration(300);
         alphaAnimation.setFillAfter(true);
         hide.startAnimation(alphaAnimation);
+        hide.setClickable(true);
         isOpen = true;
     }
 
@@ -80,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         alphaAnimation.setDuration(300);
         alphaAnimation.setFillAfter(true);
         hide.startAnimation(alphaAnimation);
+        hide.setClickable(false);
         isOpen = false;
     }
 
