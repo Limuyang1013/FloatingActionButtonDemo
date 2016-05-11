@@ -17,6 +17,7 @@ import android.view.animation.Interpolator;
  *
  */
 public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
+    //先慢后快再慢
     private static final Interpolator INTERPOLATOR = new FastOutSlowInInterpolator();
     private boolean mIsAnimatingOut = false;
 
@@ -24,10 +25,11 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
         super();
     }
 
+    //初始条件
     @Override
     public boolean onStartNestedScroll(final CoordinatorLayout coordinatorLayout, final FloatingActionButton child,
                                        final View directTargetChild, final View target, final int nestedScrollAxes) {
-        // Ensure we react to vertical scrolling
+        //垂直滚动
         return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL
                 || super.onStartNestedScroll(coordinatorLayout, child, directTargetChild, target, nestedScrollAxes);
     }

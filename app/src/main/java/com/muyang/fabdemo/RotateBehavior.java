@@ -47,8 +47,12 @@ public class RotateBehavior extends CoordinatorLayout.Behavior<FloatingActionBut
         for (int i = 0, z = dependencies.size(); i < z; i++) {
             final View view = dependencies.get(i);
             if (view instanceof Snackbar.SnackbarLayout && parent.doViewsOverlap(fab, view)) {
+                //view.getHeight()固定为144
+                //ViewCompat.getTranslationY(view)从144-0，再从0-144
                 minOffset = Math.min(minOffset,
                         ViewCompat.getTranslationY(view) - view.getHeight());
+                Log.d("TranslationY",ViewCompat.getTranslationY(view)+"");
+                Log.d("Height",view.getHeight()+"");
             }
         }
 
