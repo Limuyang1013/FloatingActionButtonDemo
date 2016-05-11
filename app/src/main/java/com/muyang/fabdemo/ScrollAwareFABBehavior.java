@@ -51,6 +51,7 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
     // Same animation that FloatingActionButton.Behavior uses to hide the FAB when the AppBarLayout exits
     private void animateOut(final FloatingActionButton button) {
         if (Build.VERSION.SDK_INT >= 14) {
+            //withLayer()使动画中的某些操作变得更顺畅,加速渲染,API 14以后
             ViewCompat.animate(button).translationY(button.getHeight() + getMarginBottom(button)).setInterpolator(INTERPOLATOR).withLayer()
                     .setListener(new ViewPropertyAnimatorListener() {
                         public void onAnimationStart(View view) {

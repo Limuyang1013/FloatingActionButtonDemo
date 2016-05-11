@@ -17,8 +17,7 @@ import android.widget.ListView;
 
 /**
  * Created by muyang on 2016/5/9.
- * 实现这个动画的第三方库地址(ListView、RecycleView、ScrollView均可用)
- * https://github.com/makovkastar/FloatingActionButton
+ *
  */
 public class FadeBehavior extends FloatingActionButton.Behavior {
 
