@@ -58,7 +58,8 @@ public class FadeBehavior extends FloatingActionButton.Behavior {
      * 检查Y的位置，并决定按钮是否动画进入或退出
      * @param coordinatorLayout
      * @param child
-     * @param target * @param dxConsumed
+     * @param target
+     * @param dxConsumed
      * @param dyConsumed
      * @param dxUnconsumed
      * @param dyUnconsumed
