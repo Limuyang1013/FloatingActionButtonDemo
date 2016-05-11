@@ -30,7 +30,7 @@
         app:fabSize="normal"
         app:layout_anchor="@id/mRecycleView"
         app:layout_anchorGravity="bottom|right|end"
-        app:layout_behavior=".FadeBehavior"
+        app:layout_behavior=".ScrollAwareFABBehavior"
         app:pressedTranslationZ="12dp"
         app:rippleColor="#0767C8" />
 
